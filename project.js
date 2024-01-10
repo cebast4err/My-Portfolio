@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   barLevels.forEach((bar) => {
     const tecPorc = bar.previousElementSibling;
-    const porcentagem = parseInt(tecPorc.querySelector("span").innerText);
+    const porcentagem = parseInt(
+      tecPorc.querySelector("span").getAttribute("data-character")
+    );
 
     const filledBar = bar.querySelector(".filled-bar");
     filledBar.style.width = porcentagem + "%";
